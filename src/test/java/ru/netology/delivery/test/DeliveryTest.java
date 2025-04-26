@@ -20,7 +20,7 @@ import static com.codeborne.selenide.Selenide.*;
 class DeliveryTest {
 
     @BeforeEach
-    static void setUpAll() {
+    void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
