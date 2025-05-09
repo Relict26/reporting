@@ -1,2 +1,2 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/s3tjvu3cl75jc2tm?svg=true)](https://ci.appveyor.com/project/Relict26/reporting)
-<img width="956" alt="Снимок экрана 2025-05-03 111749" src="https://github.com/user-attachments/assets/4152ab6c-b2f3-4cb8-8f7a-8afc7f91f781" />
+<img width="959" alt="Снимок экрана " src="https://github.com/user-attachments/assets/a5087f49-a60f-41cc-8802-c78d18a83fd1" />
