@@ -18,7 +18,6 @@ class DeliveryTest {
     static void setUpAll() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Configuration.browserSize = "1280x800";
-        Configuration.timeout = 10000; // Увеличиваем таймаут до 10 секунд
     }
 
     @AfterAll
@@ -29,7 +28,6 @@ class DeliveryTest {
     @BeforeEach
     void setup() {
         open("http://localhost:9999");
-        // Явная проверка загрузки страницы
         $("[data-test-id=city]").shouldBe(visible);
     }
 
@@ -73,7 +71,7 @@ class DeliveryTest {
         $("[data-test-id=success-notification]")
                 .shouldBe(visible, Duration.ofSeconds(15))
                 .shouldHave(text("Успешно!"))
-                .shouldHave(text(date));
+                .shouldHave(text("Встреча успешно запланирована на " + date));
     }
 
     private void replanMeeting(String newDate) {
@@ -83,7 +81,8 @@ class DeliveryTest {
 
         $("[data-test-id=replan-notification]")
                 .shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(text("Необходимо подтверждение"));
+                .shouldHave(text("Необходимо подтверждение"))
+                .shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
 
         $("[data-test-id=replan-notification] button").click();
     }
